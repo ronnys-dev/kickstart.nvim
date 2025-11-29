@@ -2,4 +2,6 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+--
+vim.keymap.set('n', '<M-h>', 'gT', { desc = 'Предыдущая вкладка' })
+vim.keymap.set('n', '<M-l>', 'gt', { desc = 'Следующая вкладка' })
