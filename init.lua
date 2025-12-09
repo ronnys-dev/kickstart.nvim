@@ -178,13 +178,11 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- My keymaps
 -- vim.keymap.set('n', '<M-h>', 'gT', { desc = 'Предыдущая вкладка' })
 -- vim.keymap.set('n', '<M-l>', 'gt', { desc = 'Следующая вкладка' })
---
---
-
 vim.keymap.set('n', '<M-h>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Предыдущий буфер' })
 vim.keymap.set('n', '<M-l>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Следующий буфер' })
---
---
+-- Закрыть текущий файл (буфер) и перейти на предыдущий
+vim.keymap.set('n', '<M-w>', '<cmd>bp | bd #<CR>', { desc = 'Закрыть буфер (как вкладку)' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -431,6 +429,7 @@ require('lazy').setup({
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension 'remote-sshfs')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
