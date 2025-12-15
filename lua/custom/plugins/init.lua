@@ -5,6 +5,39 @@
 --
 return {
   {
+    'nvim-lua/plenary.nvim',
+  },
+  {
+    'nvim-pack/nvim-spectre',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      -- require('spectre').setup {
+      -- open_cmd = 'enew', -- открыть новый буфер в текущем окне
+      -- }
+      local spectre = require 'spectre'
+      -- Открыть/закрыть Spectre (по проекту)
+      vim.keymap.set('n', '<leader>Sr', function()
+        spectre.toggle()
+      end, { desc = 'Spectre: search & replace in project' })
+
+      -- Искомое слово = слово под курсором (по проекту)
+      vim.keymap.set('n', '<leader>Sw', function()
+        spectre.open_visual { select_word = true }
+      end, { desc = 'Spectre: search word under cursor' })
+
+      -- Искомое слово = выделенный текст (визуальный режим)
+      vim.keymap.set('v', '<leader>Sw', function()
+        vim.cmd 'esc'
+        spectre.open_visual()
+      end, { desc = 'Spectre: search visual selection' })
+
+      -- Поиск только в текущем файле
+      vim.keymap.set('n', '<leader>Sf', function()
+        spectre.open_file_search { select_word = true }
+      end, { desc = 'Spectre: search in current file' })
+    end,
+  },
+  {
     'rebelot/kanagawa.nvim',
     lazy = false, -- <== ДОБАВИТЬ: грузить сразу при старте
     priority = 1000, -- чтобы тема подгрузилась до остальных плагинов
