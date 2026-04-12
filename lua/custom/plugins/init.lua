@@ -5,6 +5,13 @@
 --
 return {
   {
+    'yanskun/gotests.nvim',
+    config = function()
+      require('gotests').setup {}
+    end,
+    ft = 'go',
+  },
+  {
     'nvim-lua/plenary.nvim',
   },
   {
