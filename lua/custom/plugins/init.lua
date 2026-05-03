@@ -47,13 +47,11 @@ return {
   },
   {
     'rebelot/kanagawa.nvim',
-    lazy = false, -- <== ДОБАВИТЬ: грузить сразу при старте
-    priority = 1000, -- чтобы тема подгрузилась до остальных плагинов
+    lazy = true,
     config = function()
       require('kanagawa').setup {
         -- сюда потом можно докинуть настройки
       }
-      vim.cmd 'colorscheme kanagawa'
     end,
   },
   {
