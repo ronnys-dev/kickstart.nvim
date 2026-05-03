@@ -11,8 +11,19 @@ return {
       start_in_insert = true,
       -- запоминать размер между открытиями
       persist_size = true,
-      -- можно добавить красивое затемнение (по вкусу)
-      shade_terminals = true,
+      -- не затемнять фон, чтобы терминал оставался прозрачным
+      shade_terminals = false,
+      highlights = {
+        Normal = {
+          guibg = 'NONE',
+        },
+        NormalFloat = {
+          guibg = 'NONE',
+        },
+        FloatBorder = {
+          guibg = 'NONE',
+        },
+      },
     }
 
     -- Хоткей: <leader>tt — открыть/закрыть терминал снизу

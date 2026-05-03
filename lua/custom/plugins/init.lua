@@ -4,7 +4,30 @@
 -- See the kickstart.nvim README for more information
 --
 return {
-  { 'xiyaowong/transparent.nvim' },
+  {
+    'xiyaowong/transparent.nvim',
+    lazy = false,
+    opts = {
+      extra_groups = {
+        'NormalFloat',
+        'FloatBorder',
+        'ToggleTermNormal',
+        'ToggleTermNormalFloat',
+        'BufferLineFill',
+        'BufferLineBackground',
+        'BufferLineBufferVisible',
+        'BufferLineBufferSelected',
+        'BufferLineSeparator',
+        'BufferLineSeparatorVisible',
+        'BufferLineSeparatorSelected',
+        'BufferLineTab',
+        'BufferLineTabSelected',
+        'BufferLineTabSeparator',
+        'BufferLineTabSeparatorSelected',
+        'BufferLineIndicatorSelected',
+      },
+    },
+  },
   {
     'yanskun/gotests.nvim',
     config = function()
@@ -66,7 +89,10 @@ return {
       require('bufferline').setup {
         options = {
           mode = 'buffers', -- показываем буферы как "табы"
-          separator_style = 'slant', -- для красоты (можно "thin", "padded" и т.п.)
+          separator_style = 'thin',
+          indicator = {
+            style = 'underline',
+          },
           show_buffer_close_icons = false,
           show_close_icon = false,
 
@@ -76,6 +102,63 @@ return {
             -- ':.` -> путь относительно текущей рабочей директории Neovim :contentReference[oaicite:0]{index=0}
             return vim.fn.fnamemodify(buf.path or buf.name, ':.')
           end,
+        },
+        highlights = {
+          fill = {
+            bg = 'NONE',
+          },
+          background = {
+            bg = 'NONE',
+            fg = '#c8c093',
+          },
+          buffer_visible = {
+            bg = 'NONE',
+            fg = '#dcd7ba',
+          },
+          buffer_selected = {
+            bg = 'NONE',
+            fg = '#c4b28a',
+            bold = true,
+            italic = false,
+            underline = true,
+            sp = '#c4b28a',
+          },
+          separator = {
+            bg = 'NONE',
+            fg = '#435965',
+          },
+          separator_visible = {
+            bg = 'NONE',
+            fg = '#435965',
+          },
+          separator_selected = {
+            bg = 'NONE',
+            fg = '#c4b28a',
+          },
+          tab = {
+            bg = 'NONE',
+            fg = '#c8c093',
+          },
+          tab_selected = {
+            bg = 'NONE',
+            fg = '#c4b28a',
+            bold = true,
+            underline = true,
+            sp = '#c4b28a',
+          },
+          tab_separator = {
+            bg = 'NONE',
+            fg = '#435965',
+          },
+          tab_separator_selected = {
+            bg = 'NONE',
+            fg = '#c4b28a',
+          },
+          indicator_selected = {
+            bg = 'NONE',
+            fg = '#c4b28a',
+            sp = '#c4b28a',
+          },
         },
       }
     end,
