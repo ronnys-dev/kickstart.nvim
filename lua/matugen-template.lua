@@ -22,6 +22,23 @@ function M.setup()
     base0E = '{{colors.secondary_fixed_dim.default.hex}}', -- Keywords, Storage
     base0F = '{{colors.error_container.default.hex}}', -- Deprecated, Embedded Tags
   }
+
+  vim.g.terminal_color_0 = '{{colors.terminal_normal_black.default.hex}}'
+  vim.g.terminal_color_1 = '{{colors.terminal_normal_red.default.hex}}'
+  vim.g.terminal_color_2 = '{{colors.terminal_normal_green.default.hex}}'
+  vim.g.terminal_color_3 = '{{colors.terminal_normal_yellow.default.hex}}'
+  vim.g.terminal_color_4 = '{{colors.terminal_normal_blue.default.hex}}'
+  vim.g.terminal_color_5 = '{{colors.terminal_normal_magenta.default.hex}}'
+  vim.g.terminal_color_6 = '{{colors.terminal_normal_cyan.default.hex}}'
+  vim.g.terminal_color_7 = '{{colors.terminal_normal_white.default.hex}}'
+  vim.g.terminal_color_8 = '{{colors.terminal_bright_black.default.hex}}'
+  vim.g.terminal_color_9 = '{{colors.terminal_bright_red.default.hex}}'
+  vim.g.terminal_color_10 = '{{colors.terminal_bright_green.default.hex}}'
+  vim.g.terminal_color_11 = '{{colors.terminal_bright_yellow.default.hex}}'
+  vim.g.terminal_color_12 = '{{colors.terminal_bright_blue.default.hex}}'
+  vim.g.terminal_color_13 = '{{colors.terminal_bright_magenta.default.hex}}'
+  vim.g.terminal_color_14 = '{{colors.terminal_bright_cyan.default.hex}}'
+  vim.g.terminal_color_15 = '{{colors.terminal_bright_white.default.hex}}'
 end
 
 return M

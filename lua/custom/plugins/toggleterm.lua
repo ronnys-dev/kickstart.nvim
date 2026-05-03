@@ -2,6 +2,8 @@ return {
   'akinsho/toggleterm.nvim',
   version = '*',
   config = function()
+    vim.env.COLORTERM = 'truecolor'
+
     require('toggleterm').setup {
       -- терминал снизу
       direction = 'horizontal',
@@ -11,6 +13,9 @@ return {
       start_in_insert = true,
       -- запоминать размер между открытиями
       persist_size = true,
+      env = {
+        COLORTERM = 'truecolor',
+      },
       -- не затемнять фон, чтобы терминал оставался прозрачным
       shade_terminals = false,
       highlights = {
